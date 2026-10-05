@@ -24,7 +24,7 @@ Replace each of the three `<span class="play soon">…</span>` (marked `LAUNCH:`
 - `assets/fonts/` — Figtree, Geist Mono (OFL, licences inside)
 - `assets/img/` — Tembo art, app screens (made-up data), `og.png` (link preview, source `og.html`)
 - `assets/video/` — the "Where did it go?" film (muted on the page)
-- `CNAME` — the custom domain (added when the domain is live)
+- `CNAME` — the custom domain
 
 The privacy policy still lives at `https://matnyaga.github.io/tembo-app/privacy.html` (Google Play
 points there; don't move it during Google's review).

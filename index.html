@@ -173,6 +173,28 @@
   </div>
 </section>
 
+<section class="signup" id="news" aria-labelledby="news-title">
+  <div class="wrap">
+    <div class="intro" style="margin:0 auto 24px;text-align:center">
+      <h2 id="news-title">Get Tembo news and money-text tips.</h2>
+      <p>About two emails a month. No spam.</p>
+    </div>
+    <!-- Posts straight to MailerLite (form "tembohq.com sign-up", group "Website sign-ups", double opt-in).
+         No MailerLite script or tracking ping on this site; see privacy.html. -->
+    <form class="signup-form" action="https://assets.mailerlite.com/jsonp/2689430/forms/200579756721177825/subscribe" method="post">
+      <div class="row">
+        <label class="sr" for="su-email">Your email</label>
+        <input id="su-email" type="email" name="fields[email]" placeholder="Your email" autocomplete="email" required>
+        <button type="submit" class="play">Sign me up</button>
+      </div>
+      <label class="consent"><input type="checkbox" required> <span>Yes, email me news and tips about Tembo. Terra Softworks Limited will use my email only for this. I can unsubscribe at any time, free, with the link in every email. <a href="privacy.html#newsletter">Privacy</a></span></label>
+      <input type="hidden" name="ml-submit" value="1">
+      <input type="hidden" name="anticsrf" value="true">
+      <p class="status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
 <section class="closing">
   <div class="wrap">
     <img src="assets/img/tembo-celebrate.svg" alt="">
@@ -202,5 +224,25 @@
     <p>© 2026 Terra Softworks Limited</p>
   </div>
 </footer>
+<script>
+// Sign-up: send to MailerLite without leaving the page. MailerLite then emails a "Confirm" link (double opt-in).
+document.querySelector('.signup-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const form = e.currentTarget, status = form.querySelector('.status'), button = form.querySelector('button');
+  button.disabled = true;
+  status.textContent = 'Sending…';
+  try {
+    const r = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok || data.success === false) throw new Error('rejected');
+    form.reset();
+    status.textContent = 'Nearly there! Check your inbox and tap "Confirm". Then you\'re in. 🐘';
+  } catch (_) {
+    status.textContent = 'That didn\'t work. Please try again, or email hello@tembohq.com.';
+  } finally {
+    button.disabled = false;
+  }
+});
+</script>
 </body>
 </html>

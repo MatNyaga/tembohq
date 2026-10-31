@@ -10,13 +10,10 @@ Colours, fonts and Tembo come from the app (`marketing/brand/`).
 
     python3 -m http.server 8765    # then open http://localhost:8765/
 
-## On launch day
+## Launch
 
-Replace each of the three `<span class="play soon">…</span>` (marked `LAUNCH:` in `index.html`) with:
-
-    <a class="play" href="https://play.google.com/store/apps/details?id=dev.pesa.mymoney&referrer=utm_source%3Dwebsite%26utm_medium%3Dbutton%26utm_campaign%3Dlaunch">Get it on Google Play</a>
-
-(or Google's official "Get it on Google Play" badge image, following Google's badge guidelines).
+Done 31 Oct 2026: the three Play buttons in `index.html` link to the live listing, tagged
+`utm_source=website&utm_medium=button&utm_campaign=launch`.
 
 ## Files
 

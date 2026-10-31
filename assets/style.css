@@ -78,11 +78,11 @@ nav { margin-left: auto; display: flex; gap: 22px; }
 nav a { color: var(--text-2); text-decoration: none; font-weight: 600; font-size: 16px; }
 nav a:hover { color: var(--text); }
 @media (max-width: 720px) { nav { display: none; } header .play { margin-left: auto; } }
+@media (max-width: 359px) { header .word { display: none; } }
 
 /* Google Play button */
 .play { display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: 17px; text-decoration: none; white-space: nowrap; }
 .play svg { width: 20px; height: 20px; flex: none; }
-.play.soon { background: var(--accent-soft); color: var(--accent); cursor: default; }
 header .play { padding: 9px 16px; font-size: 15px; }
 
 /* hero */
